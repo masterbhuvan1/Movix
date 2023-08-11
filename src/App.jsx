@@ -11,7 +11,7 @@ import { Details } from "./pages/details/Details";
 // import { SearchResult } from "./pages/searchResult/SearchResult";
 // import { PageNotFound } from "./pages/404/pageNotFound";
 // import { Explore } from "./pages/explore/explore";
-import { Explore } from "./pages/explore/explore";
+// import { Explore } from "./pages/explore/explore";
 import Footer from "./components/footer/Footer";
 import { getGenres } from "./store/homeSlice";
 function App() {
