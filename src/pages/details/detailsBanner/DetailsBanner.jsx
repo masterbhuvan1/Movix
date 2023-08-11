@@ -81,7 +81,7 @@ const DetailsBanner = ({ video, crew }) => {
                     </div>
 
                     <div className="row relative items-center flex gap-3 mb-7">
-                      <CircleRating rating={data.vote_average.toFixed(1)} />
+                      <CircleRating rating={data?.vote_average.toFixed(1)} />
 
                       <div
                         className="playbtn flex items-center  "
