@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
-import Img from "../../../components/lazyLoadImage/Img";
+
 export const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
@@ -31,10 +31,10 @@ export const HeroBanner = () => {
         <div className="background-container   bg-cover bg-center flex top-0 justify-center items-center">
           {loading ? null : (
             <>
-              <Img src={background} className="max-w-full top-0" />
+              <img src={background} className="max-w-full max-md:h-96  top-0" />
               <div className="w-full h-24 bg-gradient-to-b from-transparent to-slate-900 absolute bottom-0 left-0"></div>
               <div className="absolute font-bold w-4/5 md:w-2/5 flex flex-col items-center justify-center">
-                <div className="md:text-6xl font-serif text-slate-50">
+                <div className="md:text-6xl max-md:text-6xl font-serif text-slate-50">
                   Welcome.
                 </div>
                 <span className="font-serif text-slate-50 mb-6 w-4/5 md:w-96">

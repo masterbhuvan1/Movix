@@ -81,7 +81,8 @@ const Header = () => {
           >
             <img
               src={logo}
-              className=" w-48 ml-11 h-24 mx-11 max-md:mx-4 transition-all duration-500"
+              onClick={() => navigate("/")}
+              className=" w-48 ml-11 hover:cursor-pointer h-24 mx-11 max-md:mx-4 transition-all duration-500"
             />
             <div className=" md:hidden flex text-white mr-16 space-x-9 top-0 flex-row items-start">
               <HiOutlineSearch onClick={openSearch} />
@@ -101,13 +102,13 @@ const Header = () => {
           >
             {/* <ul className=" flex-col flex justify-start items-start w-screen "> */}
             <li
-              className="menuItem  text-white py-2 px-4 md:w-7/9"
+              className="menuItem  text-white py-2 hover:cursor-pointer px-4 md:w-7/9"
               onClick={() => navigationHandler("movie")}
             >
               Movies
             </li>
             <li
-              className={`menuItem   text-white ${
+              className={`menuItem hover:cursor-pointer   text-white ${
                 mobileMenu ? "px-4" : "px-4"
               } `}
               onClick={() => navigationHandler("tv")}

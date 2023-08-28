@@ -5,7 +5,7 @@ const Genres = ({ data }) => {
   const { genres } = useSelector((state) => state.home);
 
   return (
-    <div className="flex gap-2">
+    <div className="flex  max-md:flex-col gap-2">
       {data?.map((g) => {
         if (!genres[g]?.name) return;
         return (

@@ -6,8 +6,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
-
-import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../assets/no-poster.png";
 import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
@@ -51,7 +49,7 @@ export const Carousel = ({ data, loading, endPoint }) => {
   };
 
   return (
-    <div className="max-w-screen-xl items-center overflow-hidden relative ">
+    <div className="max-w-screen-xl  items-center overflow-hidden relative ">
       {!loading ? (
         <div className="overflow-x-auto no-scrollbar background-container bg-cover bg-center flex ">
           {data?.map((item, index) => {
@@ -61,7 +59,7 @@ export const Carousel = ({ data, loading, endPoint }) => {
             return (
               <div
                 key={index}
-                className={`flex-shrink-0 h-80 w-52 mr-12 no-scrollbar rounded-lg ${
+                className={`flex-shrink-0 h-80 w-52  mr-12 no-scrollbar rounded-lg ${
                   // index % 5 == 0 ? "snap-center" :
                   ""
                 } `}
@@ -71,7 +69,10 @@ export const Carousel = ({ data, loading, endPoint }) => {
                 }
               >
                 <div className=" relative background-container bg-cover">
-                  <img src={posterUrl} className=" rounded-md mb-4" />
+                  <img
+                    src={posterUrl}
+                    className=" hover:cursor-pointer rounded-md mb-4"
+                  />
                   {/* <CircleRating rating={item.vote_average.toFixed(1)} />
                   <Genres data={item.genre_ids.slice(0, 2)} /> */}
 
