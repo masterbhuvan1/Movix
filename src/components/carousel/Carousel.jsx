@@ -1,15 +1,11 @@
 import React, { useRef } from "react";
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
+
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
 import PosterFallback from "../../assets/no-poster.png";
 import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
-// import Genres from "../genres/Genres";
 
 export const Carousel = ({ data, loading, endPoint }) => {
   const carouselContainer = useRef();
@@ -73,8 +69,6 @@ export const Carousel = ({ data, loading, endPoint }) => {
                     src={posterUrl}
                     className=" hover:cursor-pointer rounded-md mb-4"
                   />
-                  {/* <CircleRating rating={item.vote_average.toFixed(1)} />
-                  <Genres data={item.genre_ids.slice(0, 2)} /> */}
 
                   <div className="absolute bottom-0 left-0 right-8  ">
                     <CircleRating rating={item.vote_average.toFixed(1)} />

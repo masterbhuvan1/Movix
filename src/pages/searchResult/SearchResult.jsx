@@ -3,9 +3,6 @@ import { useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchDataFromApiSearch } from "../../utils/api";
 import MovieCard from "../../components/movieCard/MovieCard";
-import Spinner from "../../components/spinner/Spinner";
-// import noResults from "../../assets/no-results.png";
-// import tw from "tailwind-styled-components";
 
 const SearchResult = () => {
   const [data, setData] = useState(null);
@@ -21,22 +18,6 @@ const SearchResult = () => {
       setPageNum((prev) => prev + 1);
       setLoading(false);
     });
-  };
-
-  const fetchNextPageData = () => {
-    fetchDataFromApiSearch(`/search/multi?query=${query}&page=${pageNum}`).then(
-      (res) => {
-        if (data?.results) {
-          setData({
-            ...data,
-            results: [...data?.results, ...res.results],
-          });
-        } else {
-          setData(res);
-        }
-        setPageNum((prev) => prev + 1);
-      }
-    );
   };
 
   useEffect(() => {
@@ -60,7 +41,6 @@ const SearchResult = () => {
                   dataLength={data?.results?.length || []}
                   next={fetchNextPageData}
                   hasMore={pageNum <= data?.total_pages}
-                  loader={<Spinner />}
                 >
                   {data?.results.map((item, index) => {
                     if (item.media_type === "person") return null;
@@ -79,9 +59,5 @@ const SearchResult = () => {
     </div>
   );
 };
-
-// const SearchResultsPage = tw.div`min-h-700px pt-100`;
-// const ResultNotFound = tw.span`text-24 text-black-light`;
-// const PageTitle = tw.div`text-24 leading-34 text-white mb-25`;
 
 export default SearchResult;

@@ -2,8 +2,6 @@ import React from "react";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 import PosterFallback from "../../assets/no-poster.png";
 
@@ -27,10 +25,6 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
         />
         {!fromSearch && (
           <div className="flex justify-between items-end p-2 absolute bottom-0 left-0 right-0 bg-black bg-opacity-50">
-            {/* <CircleRating
-              rating={data.vote_average.toFixed(1)}
-              className="w-10 h-10 max-md:w-20 max-md:h-3 bg-white"
-            /> */}
             <Genres
               data={data.genre_ids.slice(0, 2)}
               className="hidden md:flex"

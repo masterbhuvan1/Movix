@@ -6,17 +6,11 @@ export const Trending = () => {
   const [endpoint, setEndpoint] = useState("day");
 
   const { data, loading } = useFetch(`/trending/movie/${endpoint}`);
-  //console.log(data);
   const onTabChange = (tab) => {
-    //console.log("nikal");
     setEndpoint(tab === "Day" ? "day" : "week");
   };
   return (
-    <div
-      className="content relative mb-7  items-center   "
-      // style={{ width:100%}}
-    >
-      {/* <div className="items-center flex  mt-6 mb-7 relative w-screen"> */}
+    <div className="content relative mb-7  items-center   ">
       <div className=" true items-center flex max-w-screen-xl justify-between mb-2   mx-auto mt-0">
         <div className=" text-white text-2xl">Trending</div>
         <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} />
@@ -25,7 +19,6 @@ export const Trending = () => {
         className="flex justify-center max-w-screen-xl items-center px-2 mx-auto  "
         style={{ height: 500 }}
       >
-        {/* Wrap Carousel with a flex container for vertical alignment */}
         <Carousel data={data?.results} loading={loading} />
       </div>
     </div>

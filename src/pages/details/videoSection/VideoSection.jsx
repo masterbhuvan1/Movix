@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { PlayButton } from "../PlayButton";
 
-// import VideoPopup from "../../../components/videoPopup/VideoPopup";
-// import Img from "../../../components/lazyLoadImage/Img";
-// import { PlayIcon } from "../Playbtn";
-
 const VideosSection = ({ data, loading }) => {
   const [show, setShow] = useState(false);
   const [videoId, setVideoId] = useState(null);
@@ -21,7 +17,6 @@ const VideosSection = ({ data, loading }) => {
 
   return (
     <div className="videosSection relative   max-w-screen-xl items-center mx-auto mb-9">
-      {/* <ContentWrapper> */}
       <div className="sectionHeading  text-start  text-white font-light   text-2xl mb-[25px]">
         Official Videos
       </div>
@@ -38,7 +33,6 @@ const VideosSection = ({ data, loading }) => {
                 setVideoId(video.key);
                 setShow(true);
               }}
-              // style={{ width: "25%" }}
             >
               <div className="videoThumbnail relative background-container bg-cover bg-center   ">
                 <img
@@ -62,13 +56,6 @@ const VideosSection = ({ data, loading }) => {
           {loadingSkeleton()}
         </div>
       )}
-      {/* </ContentWrapper> */}
-      {/* <VideoPopup
-        show={show}
-        setShow={setShow}
-        videoId={videoId}
-        setVideoId={setVideoId}
-      /> */}
     </div>
   );
 };

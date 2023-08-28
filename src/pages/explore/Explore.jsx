@@ -6,7 +6,6 @@ import Select from "react-select";
 import useFetch from "../../hooks/useFetch";
 import { fetchDataFromApi } from "../../utils/api";
 import MovieCard from "../../components/movieCard/MovieCard";
-import Spinner from "../../components/spinner/Spinner";
 
 let filters = {};
 
@@ -131,7 +130,6 @@ const Explore = () => {
                 dataLength={data?.results?.length || []}
                 next={fetchNextPageData}
                 hasMore={pageNum <= data?.total_pages}
-                loader={<Spinner />}
               >
                 {data?.results?.map((item, index) => {
                   if (item.media_type === "person") return null;

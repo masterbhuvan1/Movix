@@ -9,7 +9,7 @@ import { getApiConfiguration } from "./store/homeSlice";
 import { fetchDataFromApi } from "./utils/api";
 import { Details } from "./pages/details/Details";
 import SearchResult from "./pages/searchResult/SearchResult";
-// import { PageNotFound } from "./pages/404/pageNotFound";
+import { PageNotFound } from "./pages/404/pageNotFound";
 // import { Explore } from "./pages/explore/explore";
 import Explore from "./pages/explore/explore";
 import Footer from "./components/footer/Footer";
@@ -60,10 +60,6 @@ function App() {
   };
 
   return (
-    // <>
-    //   <div className="text-cyan-500 text-8xl ">App hhh {url?.total_pages}</div>
-    //   <Header />
-    // </>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -71,7 +67,7 @@ function App() {
         <Route path="/:mediaType/:id" element={<Details />} />
         <Route path="/search/:query" element={<SearchResult />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
-        {/* <Route path="*" element={<PageNotFound />} /> */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
