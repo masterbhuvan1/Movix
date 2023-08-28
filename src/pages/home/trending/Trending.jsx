@@ -8,7 +8,7 @@ export const Trending = () => {
   const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/trending/movie/${endpoint}`);
   const onTabChange = (tab) => {
-    setEndpoint(tab === "Day" ? "day" : "week");
+    setEndpoint(tab === "Movie" ? "movie" : "tv");
   };
   return (
     <div className="content relative mb-7  items-center   ">
