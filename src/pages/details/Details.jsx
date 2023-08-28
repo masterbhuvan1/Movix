@@ -13,7 +13,7 @@ export const Details = () => {
   const { data, loading } = useFetch(`/${mediaType}/${id}/videos`);
   // if (mediaType !== undefined) {
   const { data: credits, loading: creditsLoading } = useFetch(
-    `/movie/${id}/credits`
+    `/${mediaType}/${id}/credits`
   );
   //}
   return (

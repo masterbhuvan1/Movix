@@ -5,7 +5,7 @@ import useFetch from "../../../hooks/useFetch";
 import { Carousel } from "../../../components/carousel/Carousel";
 export const Popular = () => {
   const [endpoint, setEndpoint] = useState("movie");
-  const { mediaType, id } = useParams();
+  // const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/${endpoint}/popular`);
   //console.log(data);
   const onTabChange = (tab) => {

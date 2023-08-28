@@ -25,7 +25,12 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
         />
         {!fromSearch && (
           <div className="flex justify-between items-end p-2 absolute bottom-0 left-0 right-0 bg-black bg-opacity-50">
-            <CircleRating rating={data.vote_average.toFixed(1)} />
+            {/* {data == undefined ? (
+              <div></div>
+            ) : ( */}
+            {/* <CircleRating rating={data?.vote_average.toFixed(1)} /> */}
+            {/* )} */}
+
             <Genres
               data={data.genre_ids.slice(0, 2)}
               className="hidden md:flex"
