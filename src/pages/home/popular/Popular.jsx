@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { SwitchTabs } from "../../../components/switch-tabs/SwitchTabs";
-
+import { useParams } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { Carousel } from "../../../components/carousel/Carousel";
 export const Popular = () => {
   const [endpoint, setEndpoint] = useState("movie");
-
+  const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/${endpoint}/popular`);
   //console.log(data);
   const onTabChange = (tab) => {
@@ -22,7 +22,7 @@ export const Popular = () => {
         className="flex justify-center max-w-screen-xl items-center px-2 mx-auto  "
         style={{ height: 500 }}
       >
-        <Carousel data={data?.results} loading={loading} />
+        <Carousel data={data?.results} loading={loading} endPoint={endpoint} />
       </div>
     </div>
   );

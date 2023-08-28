@@ -8,23 +8,8 @@ import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 
 export const Carousel = ({ data, loading, endPoint }) => {
-  const carouselContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
-
-  const navigation = (dir) => {
-    const container = carouselContainer.current;
-
-    const scrollAmount =
-      dir === "left"
-        ? container.scrollLeft - (container.offsetWidth + 20)
-        : container.scrollLeft + (container.offsetWidth + 20);
-
-    container.scrollTo({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  };
 
   const SkeletonItem = () => {
     return (
@@ -105,14 +90,4 @@ export const Carousel = ({ data, loading, endPoint }) => {
   );
 };
 {
-  /* <div className="flex btn-div absolute w-full h-full justify-between flex-row  z-10 max-w-screen-xl items-center">
-        <BsFillArrowLeftCircleFill
-          className="carouselLeftNav arrow left-10 text-black text-4xl cursor-pointer opacity-50 hidden md:block"
-          onClick={() => navigation("left")}
-        />
-        <BsFillArrowRightCircleFill
-          className="carouselRighttNav arrow right-10  text-black text-4xl cursor-pointer opacity-50 hidden md:block"
-          onClick={() => navigation("right")}
-        />
-      </div> */
 }

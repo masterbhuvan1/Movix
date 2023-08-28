@@ -16,8 +16,8 @@ const Cast = ({ data, loading }) => {
     );
   };
   return (
-    <div className=" max-w-screen-xl items-center mx-auto mb-4  ">
-      <div className="castSection relative  ">
+    <div className=" max-w-screen-xl items-center mx-20 max-md:mx-auto mb-4  ">
+      <div className="castSection relative ">
         <div className="sectionHeading  text-start text-white font-light   text-2xl mb-[25px]">
           Top Cast
         </div>

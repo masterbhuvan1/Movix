@@ -3,12 +3,25 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
+// import { newFetch } from "../../../utils/api";
 
 export const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
   const { data, loading } = useFetch("/movie/upcoming");
   //console.log(data);
+  //  console.log("nikal", await newFetch("/movie/upcoming?language=en-US&page=1"));
+
+  // const fetchAndLogData = async () => {
+  //   try {
+  //     const data = await newFetch("/movie/upcoming?language=en-US&page=1");
+  //     console.log("nikal", data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // fetchAndLogData();
 
   const url = useSelector((state) => state.home.url);
   //console.log("nikal", url.backdrop);
@@ -41,7 +54,7 @@ export const HeroBanner = () => {
           )}
           <>
             <div className="w-full h-24 bg-gradient-to-b from-transparent to-slate-900 absolute bottom-0 left-0"></div>
-            <div className="absolute font-bold w-4/5 md:w-2/5 flex flex-col items-center justify-center">
+            <div className="absolute font-bold  flex flex-col items-center justify-center">
               <div className="md:text-6xl max-md:text-6xl font-serif text-slate-50">
                 Welcome.
               </div>

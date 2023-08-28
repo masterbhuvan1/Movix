@@ -14,6 +14,9 @@ const VideosSection = ({ data, loading }) => {
       </div>
     );
   };
+  if (data == null || data.results.length === 0) {
+    return null;
+  }
 
   return (
     <div className="videosSection relative   max-w-screen-xl items-center mx-auto mb-9">
@@ -28,7 +31,7 @@ const VideosSection = ({ data, loading }) => {
           {data?.results?.map((video) => (
             <div
               key={video.id}
-              className="videoItem     flex-shrink-0 "
+              className="videoItem w-[25%]  flex-shrink-0 "
               onClick={() => {
                 setVideoId(video.key);
                 setShow(true);

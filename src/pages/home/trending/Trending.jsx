@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { SwitchTabs } from "../../../components/switch-tabs/SwitchTabs";
 import useFetch from "../../../hooks/useFetch";
 import { Carousel } from "../../../components/carousel/Carousel";
+import { useParams } from "react-router-dom";
 export const Trending = () => {
   const [endpoint, setEndpoint] = useState("day");
-
+  const { mediaType, id } = useParams();
   const { data, loading } = useFetch(`/trending/movie/${endpoint}`);
   const onTabChange = (tab) => {
     setEndpoint(tab === "Day" ? "day" : "week");
@@ -19,7 +20,7 @@ export const Trending = () => {
         className="flex justify-center max-w-screen-xl items-center px-2 mx-auto  "
         style={{ height: 500 }}
       >
-        <Carousel data={data?.results} loading={loading} />
+        <Carousel data={data?.results} loading={loading} endPoint={endpoint} />
       </div>
     </div>
   );

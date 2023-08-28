@@ -8,10 +8,14 @@ import Similar from "./Similar";
 import Recommendation from "./Recommendations";
 export const Details = () => {
   const { mediaType, id } = useParams();
+  // const mediatype = "movie";
+  console.log(mediaType, id);
   const { data, loading } = useFetch(`/${mediaType}/${id}/videos`);
+  // if (mediaType !== undefined) {
   const { data: credits, loading: creditsLoading } = useFetch(
-    `/${mediaType}/${id}/credits`
+    `/movie/${id}/credits`
   );
+  //}
   return (
     <div className="  ">
       <DetailsBanner video={data?.results?.[0]} crew={credits?.crew} />

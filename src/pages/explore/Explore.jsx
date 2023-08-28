@@ -116,12 +116,12 @@ const Explore = () => {
               onChange={onChange}
               isClearable={true}
               placeholder="Sort by"
-              className="react-select-container sortbyDD"
+              className="react-select-container sortbyDD "
               classNamePrefix="react-select"
             />
           </div>
         </div>
-        {loading && <Spinner initial={true} />}
+        {/* {loading && <Spinner initial={true} />} */}
         {!loading && (
           <>
             {data?.results?.length > 0 ? (
