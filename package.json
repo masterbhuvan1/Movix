@@ -1,5 +1,5 @@
 {
-  "homepage": "https://masterbhuvan1.github.io/movix",
+  "homepage": "https://masterbhuvan1.github.io/Movix",
   "name": "movix",
   "private": true,
   "version": "0.0.0",
@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "start": "serve -s dist",
-    "predeploy": "npm run dev",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "preview": "vite preview --port 8080"
   },
